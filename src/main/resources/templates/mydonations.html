@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Donations</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            🍱 Food Donation
+        </a>
+
+    </div>
+
+</nav>
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            <h2>My Donations</h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle text-center">
+
+                    <thead class="table-success">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Food</th>
+                        <th>Quantity</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                    <tr th:each="donation : ${donations}">
+
+                        <td th:text="${donation.id}"></td>
+
+                        <td th:text="${donation.foodName}"></td>
+
+                        <td th:text="${donation.quantity}"></td>
+
+                        <td th:text="${donation.foodType}"></td>
+
+                        <td>
+
+                            <span class="badge bg-warning text-dark"
+                                  th:if="${donation.status=='Pending'}">
+                                Pending
+                            </span>
+
+                            <span class="badge bg-primary"
+                                  th:if="${donation.status=='Accepted'}">
+                                Accepted
+                            </span>
+
+                            <span class="badge bg-info text-dark"
+                                  th:if="${donation.status=='Pickup Scheduled'}">
+                                Pickup Scheduled
+                            </span>
+
+                            <span class="badge bg-success"
+                                  th:if="${donation.status=='Completed'}">
+                                Completed
+                            </span>
+
+                        </td>
+
+                        <td th:text="${donation.pickupDate}"></td>
+
+                        <td th:text="${donation.pickupTime}"></td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="text-center mt-3">
+
+                <a href="/dashboard" class="btn btn-secondary">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* ---------- Global ---------- */
+
+body{
+    background:#f5f7fa;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar{
+    background:#198754;
+}
+
+.navbar-brand,
+.nav-link{
+    color:white !important;
+    font-weight:bold;
+}
+
+/* ---------- Container ---------- */
+
+.container-box{
+    margin-top:40px;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+/* ---------- Card Header ---------- */
+
+.card-header{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn{
+    border-radius:10px;
+    padding:10px 30px;
+}
+
+/* ---------- Tables ---------- */
+
+.table{
+    background:white;
+}
+
+.table th,
+.table td{
+    vertical-align:middle;
+}
+
+/* ---------- Badge ---------- */
+
+.badge{
+    font-size:15px;
+    padding:8px 12px;
+}
+
+/* ---------- Headings ---------- */
+
+h1,h2,h3{
+    color:#198754;
+    font-weight:bold;
+}
+
+/* ---------- Footer ---------- */
+
+.footer{
+    margin-top:50px;
+    text-align:center;
+    color:gray;
+}
